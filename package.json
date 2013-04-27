@@ -1,7 +1,11 @@
 {
   "name": "blog-demo",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "async": "~0.2.7",
+    "express": "~3.2.0",
+    "mongoose": "~3.6.8"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.0",
@@ -24,7 +28,10 @@
     "grunt-open": "~0.2.0",
     "matchdep": "~0.1.1",
     "grunt-google-cdn": "~0.1.1",
-    "grunt-ngmin": "~0.0.2"
+    "grunt-ngmin": "~0.0.2",
+    "should": "~1.2.2",
+    "mocha": "~1.9.0",
+    "supertest": "~0.6.0"
   },
   "engines": {
     "node": ">=0.8.0"
