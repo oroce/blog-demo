@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('blogDemoApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.posts = [];
+  .controller('MainCtrl', function ($scope, Post) {
+    $scope.posts = Post.getAll();
 
   });
