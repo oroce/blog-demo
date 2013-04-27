@@ -61,7 +61,9 @@ app.get( "/", function( req, res, next ){
 		}
 	});
 });
-
+app.get( "/new", function( req, res ){
+	res.render( "index" );
+});
 app.post( "/new", function( req, res, next ){
 	var post = new PostModel({
 		title: req.param( "title" ),
