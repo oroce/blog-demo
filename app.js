@@ -62,6 +62,29 @@ app.get( "/", function( req, res, next ){
 	});
 });
 
+app.post( "/new", function( req, res, next ){
+	var post = new PostModel({
+		title: req.param( "title" ),
+		body: req.param( "body" )
+	});
+
+	post.save(function( err ){
+		if( err ){
+			err.statusCode = 400;
+			return next( err );
+		}
+		res.format({
+			html: function(){
+				res.redirect( "/" + post.id );
+			},
+			json: function(){
+				res.json( post );
+			}
+		});
+	});
+
+});
+
 app.get( "/:postId", function( req, res ){
 	var post = req.postItem;
 	res.formatter({
