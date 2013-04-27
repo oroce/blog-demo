@@ -1,0 +1,10 @@
+<form>
+  <fieldset>
+    <legend>Legend</legend>
+    <label>Label name</label>
+    <input type="text" value="{{post.title}}" ng-model="post.title" />
+    <input type="text" value="{{post.body}}" ng-model="post.body" />
+    
+    <button ng-click="save()" type="submit" class="btn">Submit</button>
+  </fieldset>
+</form>
