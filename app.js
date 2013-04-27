@@ -87,7 +87,7 @@ app.post( "/new", function( req, res, next ){
 
 app.get( "/:postId", function( req, res ){
 	var post = req.postItem;
-	res.formatter({
+	res.format({
 		html: function(){
 			res.render( "post" );
 		},
@@ -122,7 +122,7 @@ app.put( "/:postId/edit", function( req, res, next ){
 				err.statusCode = 400;
 				return next( err );
 			}
-			res.formatter({
+			res.format({
 				html: function(){
 					res.redirect( "/" + post._id );
 				},
