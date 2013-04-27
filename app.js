@@ -89,7 +89,7 @@ app.get( "/:postId", function( req, res ){
 	var post = req.postItem;
 	res.format({
 		html: function(){
-			res.render( "post" );
+			res.render( "index" );
 		},
 		json: function(){
 			res.json( post );
@@ -101,7 +101,7 @@ app.get( "/:postId/edit", function( req, res ){
 	var post = req.postItem;
 	res.format({
 		html: function(){
-			res.render( "post" );
+			res.render( "index" );
 		},
 		json: function(){
 			res.json( post );
