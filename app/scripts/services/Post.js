@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('blogDemoApp', ['ngResource'])
+angular.module('blogDemoApp.services', ['ngResource'])
        // Post
         .factory('Post', function($resource){
 
