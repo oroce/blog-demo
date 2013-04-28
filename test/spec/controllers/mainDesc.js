@@ -6,13 +6,21 @@ describe('Controller: MainCtrl', function () {
   beforeEach(module('blogDemoApp'));
 
   var MainCtrl,
-    scope;
+      scope;
+
+  // mock Post service
+  var Post = {
+    getAll: function() {
+      return [];
+    }
+  };
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+      $scope: scope,
+      Post: Post
     });
   }));
 

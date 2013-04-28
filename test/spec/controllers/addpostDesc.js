@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: PostReadCtrl', function () {
+describe('Controller: AddPostCtrl', function () {
 
   // load the controller's module
   beforeEach(module('blogDemoApp'));
 
-  var PostReadCtrl,
+  var AddPostCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    PostReadCtrl = $controller('PostReadCtrl', {
+    AddPostCtrl = $controller('AddPostCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('default title should be "new title"', function () {
+    expect(scope.post.title).toBe('new title');
   });
 });
