@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('blogDemoApp')
-  .controller('PostReadCtrl', function ($scope, $routeParams, Post) {
-  	console.log('dsd');
+    .controller('PostReadCtrl', function ($scope, $routeParams, Post) {
+        console.log('dsd');
 
-  	var id = $routeParams['id'];
-    $scope.post = Post.getByID({id:id});
-  });
+        var id = $routeParams.id;
+        $scope.post = Post.getByID({id: id});
+    });
