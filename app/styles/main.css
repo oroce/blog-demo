@@ -1,1 +1,6 @@
 /* Will be compiled down to a single stylesheet with your sass files */
+
+ul {
+    margin-left: 0;
+    list-style: none;
+}

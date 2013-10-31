@@ -1,12 +1,14 @@
-<div class="hero-unit">
-  <ul class="media-list">
-  <li class="media" ng-repeat="post in posts">
-    <div class="media-body">
-      <h4 class="media-heading">{{post.title}}</h4>
-      <p>{{post.body}}</p>
-	    <a href="/#/{{post._id}}">to post</a>
-     </div>
-    </div>
-  </li>
-</ul>
+<h1>Posts</h1>
+<div class="well">
+    <ul class="media-list">
+        <li class="media" ng-repeat="post in posts">
+            <div class="media-body">
+                <h4 class="media-heading">{{post.title}}</h4>
+
+                <p>{{post.body}}</p>
+                <a href="/#/{{post._id}}">Read post</a>
+            </div>
+        </li>
+    </ul>
+    <a href="/#/new" class="btn btn-basic">Create new post</a>
 </div>

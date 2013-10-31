@@ -1,10 +1,24 @@
-<form>
-  <fieldset>
-    <legend>Legend</legend>
-    <label>Label name</label>
-    <input type="text" value="{{post.title}}" ng-model="post.title" />
-    <input type="text" value="{{post.body}}" ng-model="post.body" />
-    
-    <button ng-click="save()" type="submit" class="btn">Submit</button>
-  </fieldset>
-</form>
+<h1>Add post</h1>
+<div class="well">
+    <form class="form-horizontal" ng-submit="save()" name="addpost" novalidate>
+        <div class="control-group">
+            <label class="control-label" for="inputName">Name</label>
+
+            <div class="controls">
+                <input id="inputName" type="text" ng-model="post.title" placeholder="Name" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputBody">Body</label>
+
+            <div class="controls">
+                <input id="inputBody" type="text" ng-model="post.body" placeholder="Body" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" class="btn" value="Submit" ng-disabled="addpost.$invalid"/>
+            </div>
+        </div>
+    </form>
+</div>

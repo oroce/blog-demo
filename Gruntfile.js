@@ -42,6 +42,29 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ],
                 tasks: ['livereload']
+            },
+            express: {
+                options: {
+                    livereload: true,
+                    nospawn: true //Without this option specified express won't be reloaded
+                },
+                files:  [
+                    'app.js',
+                    'lib/**/*.js',
+                ],
+                tasks:  ['express:dev']
+            }
+        },
+        express: {
+            options: {
+                // Override defaults here
+                background: true,
+                port: 9000
+            },
+            dev: {
+                options: {
+                    script: './app.js'
+                }
             }
         },
         connect: {
@@ -282,7 +305,7 @@ module.exports = function (grunt) {
         'coffee:dist',
         'compass:server',
         'livereload-start',
-        'connect:livereload',
+        'express:dev',
         'open',
         'watch'
     ]);

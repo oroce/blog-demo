@@ -1,9 +1,14 @@
-'use strict';
+(function (angular) {
+    'use strict';
 
-angular.module('blogDemoApp')
-    .controller('PostReadCtrl', function ($scope, $routeParams, Post) {
-        console.log('dsd');
+    angular.module('blogDemoApp')
+        .controller('PostReadCtrl', function ($scope, $routeParams, Post) {
+            var id = $routeParams.id;
 
-        var id = $routeParams.id;
-        $scope.post = Post.getByID({id: id});
-    });
+            $scope.post = null;
+
+            Post.getByID({id: id}, function (post) {
+                $scope.post = post;
+            });
+        });
+}(angular));
