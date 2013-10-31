@@ -1,10 +1,12 @@
-'use strict';
+(function (angular) {
+    'use strict';
 
-angular.module('blogDemoApp')
-    .controller('MainCtrl', function ($scope, Post) {
-        $scope.posts = [];
+    angular.module('blogDemoApp')
+        .controller('MainCtrl', function ($scope, Post) {
+            $scope.posts = [];
 
-        Post.getAll({}, function (posts) {
-            $scope.posts = posts;
+            Post.getAll({}, function (posts) {
+                $scope.posts = posts;
+            });
         });
-    });
+}(angular));
